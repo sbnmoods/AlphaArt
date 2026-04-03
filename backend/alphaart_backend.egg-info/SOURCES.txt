@@ -1,0 +1,10 @@
+pyproject.toml
+alphaart_backend.egg-info/PKG-INFO
+alphaart_backend.egg-info/SOURCES.txt
+alphaart_backend.egg-info/dependency_links.txt
+alphaart_backend.egg-info/requires.txt
+alphaart_backend.egg-info/top_level.txt
+app/main.py
+app/schemas.py
+app/services/converter.py
+tests/test_main.py
