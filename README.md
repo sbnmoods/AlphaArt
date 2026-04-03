@@ -4,10 +4,15 @@
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688?logo=fastapi)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?logo=typescript&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 Convert portraits, animals, and simple scenes into sharp alphabet and character art with a responsive web app powered by Next.js and FastAPI.
 
 AlphaArt accepts an uploaded image, rebuilds it using text characters, and lets you preview or export the result as plain text, SVG, or PNG.
+
+## Live repo
+
+- GitHub: https://github.com/sbnmoods/AlphaArt
 
 ## Suggested GitHub repository description
 
@@ -68,6 +73,8 @@ The corresponding plain text outputs are also committed in `docs/examples`.
 
 - `frontend` - Next.js app for upload, controls, preview, and download actions
 - `backend` - FastAPI API for image conversion and export rendering
+- `docs/examples` - generated example input/output images for the GitHub page
+- `scripts` - helper scripts such as reproducible asset generation
 - `plan.md` - product and technical spec for the current implementation direction
 
 ## Requirements
@@ -103,6 +110,15 @@ npm run dev
 
 The web app will run at `http://127.0.0.1:3000`.
 
+## Deploy publicly
+
+For a production deployment, use:
+
+- Vercel for `frontend`
+- Render for `backend`
+
+Deployment steps and environment variables are documented in `DEPLOYMENT.md`.
+
 ## How to use the app
 
 1. Open the frontend in your browser.
@@ -133,6 +149,10 @@ The web app will run at `http://127.0.0.1:3000`.
 - Next.js frontend with responsive upload, preview, and download flow
 - Export support for plain text, SVG, and PNG
 - Backend smoke tests for healthcheck and conversion flow
+
+## License
+
+This project is licensed under the MIT License. See `LICENSE`.
 
 ## Next improvements
 

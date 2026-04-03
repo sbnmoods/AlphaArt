@@ -1,3 +1,5 @@
+import os
+
 from fastapi import FastAPI, File, Form, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from PIL import UnidentifiedImageError
@@ -7,11 +9,19 @@ from app.schemas import ConvertOptions, ConvertResponse
 from app.services.converter import convert_image_to_character_art
 
 
+def get_allowed_origins() -> list[str]:
+    configured_origins = os.getenv("ALLOWED_ORIGINS")
+    if configured_origins:
+        return [origin.strip() for origin in configured_origins.split(",") if origin.strip()]
+
+    return ["http://localhost:3000", "http://127.0.0.1:3000"]
+
+
 app = FastAPI(title="AlphaArt API", version="0.1.0")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],
+    allow_origins=get_allowed_origins(),
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
